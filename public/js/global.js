@@ -41,6 +41,8 @@ let modalType
 // 當前路徑
 const pathname = window.location.pathname
 
+const profileAvatars = document.querySelectorAll('.profile-avatar')
+
 // 初始函式
 ;(function init() {
   // 設定主題模式
@@ -59,6 +61,11 @@ const pathname = window.location.pathname
   profile.addEventListener('click', onLogout)
   // 監聽器: Home鍵
   logo.addEventListener('click', onRedirectHome)
+
+  if (isLoggedIn && user && user.avatar) {
+  profileAvatars.map((avatar) => avatar.src = user.avatar)
+  }
+
 })()
 
 // 設定主題模式
@@ -208,10 +215,8 @@ function loginRequest(body) {
       console.log('登入狀態', true)
       console.log('註冊成功')
       // 更新大頭貼
-      const profileImg = document.querySelector('.profile-avatar')
-      if (profileImg && user.avatar) {
-        profileImg.src = user.avatar
-      }
+       profileAvatars.map((avatar) => avatar.src = user.avatar)
+
       // 切換到頁面
       modalBg.classList.toggle('hidden')
       // 切換登入樣式
@@ -242,5 +247,7 @@ function onLogout(event) {
     cookie.set('isLoggedIn', isLoggedIn)
     token = ''
     cookie.set('token', token)
+    // 更新大頭貼
+    profileAvatars.map((avatar) => avatar.src = "../public/images/guest/guest.png")
   }
 }
