@@ -40,8 +40,10 @@ console.log('登入憑證: ', token)
 let modalType
 // 當前路徑
 const pathname = window.location.pathname
-
-const profileAvatars = document.querySelectorAll('.profile-avatar')
+// 大頭貼照片
+const profileAvatars = document.querySelectorAll('.avatar-img')
+// 用戶名稱
+const userName = document.querySelectorAll('.comment-username')
 
 // 初始函式
 ;(function init() {
@@ -64,6 +66,7 @@ const profileAvatars = document.querySelectorAll('.profile-avatar')
 
   if (isLoggedIn && user && user.avatar) {
   profileAvatars.forEach((avatar) => avatar.src = user.avatar)
+  userName.forEach((name) => name.textContent = user.username)
   }
 
 })()
@@ -215,8 +218,8 @@ function loginRequest(body) {
       console.log('登入狀態', true)
       console.log('註冊成功')
       // 更新大頭貼
-       profileAvatars.forEach((avatar) => avatar.src = user.avatar)
-
+      profileAvatars.forEach((avatar) => avatar.src = user.avatar)
+      userName.forEach((name) => name.textContent = user.username) 
       // 切換到頁面
       modalBg.classList.toggle('hidden')
       // 切換登入樣式
@@ -249,5 +252,6 @@ function onLogout(event) {
     cookie.set('token', token)
     // 更新大頭貼
     profileAvatars.forEach((avatar) => avatar.src = "../public/images/guest/guest.png")
+    userName.forEach((name) => name.textContent = "GUEST")
   }
 }

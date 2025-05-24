@@ -103,6 +103,7 @@ body main article div.article-content {
 
 .comment-avatar {
   width: 3rem;
+  height: 3rem;
   margin-right: 10px;
   border-radius: 50%;
 }
