@@ -63,7 +63,7 @@ const profileAvatars = document.querySelectorAll('.profile-avatar')
   logo.addEventListener('click', onRedirectHome)
 
   if (isLoggedIn && user && user.avatar) {
-  profileAvatars.map((avatar) => avatar.src = user.avatar)
+  profileAvatars.forEach((avatar) => avatar.src = user.avatar)
   }
 
 })()
@@ -215,7 +215,7 @@ function loginRequest(body) {
       console.log('登入狀態', true)
       console.log('註冊成功')
       // 更新大頭貼
-       profileAvatars.map((avatar) => avatar.src = user.avatar)
+       profileAvatars.forEach((avatar) => avatar.src = user.avatar)
 
       // 切換到頁面
       modalBg.classList.toggle('hidden')
@@ -248,6 +248,6 @@ function onLogout(event) {
     token = ''
     cookie.set('token', token)
     // 更新大頭貼
-    profileAvatars.map((avatar) => avatar.src = "../public/images/guest/guest.png")
+    profileAvatars.forEach((avatar) => avatar.src = "../public/images/guest/guest.png")
   }
 }
