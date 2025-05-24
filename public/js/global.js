@@ -232,8 +232,8 @@ function onLogout(event) {
       logInComment.classList.add('hidden')
       logOutComment.classList.remove('hidden')
     }
-    if (pathname !== '/article/index.html' && pathname !== '/home/index.html') {
-      window.location.href = '../home/index.html'
+    if (pathname !== '/article/index.html' && pathname !== '/index.html') {
+      window.location.href = '../index.html'
     }
     // 切換header樣式
     sign.classList.remove('hidden')
