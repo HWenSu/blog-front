@@ -1,6 +1,5 @@
 // 起始網址
-const BASE_URL = 'https://elva-blog-back.zeabur.app/v1' || 'http://localhost:5000/v1'
-
+const BASE_URL = 'https://elva-blog-back.zeabur.app/v1' 
 // Local Storage
 class Storage {
   // 儲存
