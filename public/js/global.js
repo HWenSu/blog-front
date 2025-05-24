@@ -207,6 +207,11 @@ function loginRequest(body) {
       console.log('會員資料', user)
       console.log('登入狀態', true)
       console.log('註冊成功')
+      // 更新大頭貼
+      const profileImg = document.querySelector('.profile-avatar')
+      if (profileImg && user.avatar) {
+        profileImg.src = user.avatar
+      }
       // 切換到頁面
       modalBg.classList.toggle('hidden')
       // 切換登入樣式
