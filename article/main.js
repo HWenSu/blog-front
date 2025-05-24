@@ -187,5 +187,5 @@ function onFilter(event) {
   }
   cookie.set('keyword', target.textContent)
   // 導向HOME頁面
-  window.location.href = '/home/index.html'
+  window.location.href = '/index.html'
 }
