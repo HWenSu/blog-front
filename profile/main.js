@@ -74,7 +74,7 @@ function onSubmit(event) {
     formData.append('file', file)
 
     axios
-      .patch(`https://elva-blog-back.zeabur.app/users/${id}/upload`, formData, {
+      .patch(`${BASE_URL}/users/${id}/upload`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${token}`
