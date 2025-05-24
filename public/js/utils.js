@@ -1,5 +1,5 @@
 // 起始網址
-const BASE_URL = 'http://localhost:5000/v1'
+const BASE_URL = 'blog-back.zeabur.internal/v1' || 'http://localhost:5000/v1'
 
 // Local Storage
 class Storage {
