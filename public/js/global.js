@@ -129,7 +129,7 @@ function onRedirectHome() {
   cookie.remove('filter')
 
   // 導向home頁面
-  window.location.href = '../home/index.html'
+  window.location.href = '../index.html'
 }
 
 // #監聽器函式: 登入/註冊 彈跳窗 提交表單
